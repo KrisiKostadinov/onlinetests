@@ -41,7 +41,7 @@ module.exports = {
 
             jwt.sign({
                 user: user.email,
-                exp: Math.floor(Date.now() / 1000) + (60 * 60),
+                exp: Math.floor(Date.now() / 1000) + 30,
             }, 'secret', (err, token) => {
                 if(err) {
                     return res.send(err);

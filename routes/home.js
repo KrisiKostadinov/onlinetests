@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const controllers = require('../controllers');
+const { isAuth } = require('../config/restrictedPages');
 
-router.get('/', controllers.home.get.home);
+router.get('/', isAuth, controllers.home.get.home);
 
 module.exports = router;
